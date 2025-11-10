@@ -1,0 +1,1352 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /afs/hep.wisc.edu/cms/sw/Xilinx/Vitis_HLS/2021.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/afs/hep.wisc.edu/cms/sw/Xilinx/Vitis_HLS/2021.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'ekauffma' on host 'login06.hep.wisc.edu' (Linux_x86_64 version 6.1.154-1.el9.elrepo.x86_64) on Thu Nov 06 08:32:15 CST 2025
+INFO: [HLS 200-10] On os "AlmaLinux release 9.6 (Sage Margay)"
+INFO: [HLS 200-10] In directory '/afs/hep.wisc.edu/user/ekauffma/cicada_work/cicada/cicada-v2'
+Sourcing Tcl script 'build_prj.tcl'
+INFO: [HLS 200-1510] Running: open_project cicada_prj 
+INFO: [HLS 200-10] Creating and opening project '/afs/hep.wisc.edu/user/ekauffma/cicada_work/cicada/cicada-v2/cicada_prj'.
+INFO: [HLS 200-1510] Running: set_top cicada 
+INFO: [HLS 200-1510] Running: add_files firmware/cicada.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file 'firmware/cicada.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb cicada_test.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding test bench file 'cicada_test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb firmware/weights 
+INFO: [HLS 200-10] Adding test bench file 'firmware/weights' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb_data 
+INFO: [HLS 200-10] Adding test bench file 'tb_data' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Creating and opening solution '/afs/hep.wisc.edu/user/ekauffma/cicada_work/cicada/cicada-v2/cicada_prj/solution1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: config_array_partition -maximum_size 4096 
+INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
+ERROR: [HLS 200-642] The 'config_array_partition -maximum_size' command is not supported.
+INFO: [HLS 200-1510] Running: config_compile -name_max_length 80 
+INFO: [XFORM 203-1161] The maximum of name length is set into 80.
+INFO: [HLS 200-1510] Running: set_part xc7vx690tffg1927-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx690t-ffg1927-2'
+INFO: [XFORM 203-1161] The maximum of name length is set into 80.
+INFO: [HLS 200-1510] Running: config_schedule -enable_dsp_full_reg=false 
+INFO: [HLS 200-1510] Running: create_clock -period 6.25 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.25ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 12.5% default 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.781ns.
+***** C SIMULATION *****
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../cicada_test.cpp in debug mode
+   Compiling ../../../../firmware/cicada.cpp in debug mode
+   Generating csim.exe
+INFO: Unable to open input/predictions file, using default input.
+0 
+INFO: Saved inference results to file: tb_data/csim_results.log
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 9.97 seconds. CPU system time: 2.15 seconds. Elapsed time: 12.16 seconds; current allocated memory: 251.017 MB.
+***** C SIMULATION COMPLETED IN 0h0m12s *****
+***** C/RTL SYNTHESIS *****
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 251.226 MB.
+INFO: [HLS 200-10] Analyzing design file 'firmware/cicada.cpp' ... 
+WARNING: [HLS 207-5535] Unsupported interface port data type in '#pragma HLS interface ap_vld': firmware/cicada.cpp:14:46
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:42:71
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:42:75
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:55:67
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:55:71
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:63:71
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:63:75
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:71:72
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/cicada.cpp:71:77
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=214-113.html
+WARNING: [HLS 200-471] Dataflow form checks found 8 issue(s) in file firmware/cicada.cpp
+Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-471.html
+WARNING: [HLS 207-5301] unused parameter 'print': /afs/hep.wisc.edu/cms/sw/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_int_base.h:792:16
+WARNING: [HLS 207-5301] unused parameter 'keep': firmware/nnet_utils/nnet_helpers.h:285:99
+WARNING: [HLS 207-5301] unused parameter 'data': firmware/nnet_utils/nnet_code_gen.h:11:36
+WARNING: [HLS 207-5301] unused parameter 'buffer': firmware/nnet_utils/nnet_code_gen.h:12:36
+WARNING: [HLS 207-5301] unused parameter 'partition': firmware/nnet_utils/nnet_code_gen.h:13:44
+WARNING: [HLS 207-5301] unused parameter 'data': firmware/nnet_utils/nnet_code_gen.h:21:24
+WARNING: [HLS 207-5301] unused parameter 'buffer': firmware/nnet_utils/nnet_code_gen.h:22:24
+WARNING: [HLS 207-5301] unused parameter 'partition': firmware/nnet_utils/nnet_code_gen.h:23:32
+WARNING: [HLS 207-5535] Unsupported interface port data type in '#pragma HLS interface ap_vld': firmware/cicada.cpp:14:46
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 24.81 seconds. CPU system time: 2.39 seconds. Elapsed time: 28.18 seconds; current allocated memory: 253.803 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-279] Initial Interval estimation mode is set into default.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+WARNING: [HLS 214-273] In function 'void nnet::dense<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config7::weight_t*, config7::bias_t*)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region is not suggested (firmware/nnet_utils/nnet_dense.h:38:0)
+WARNING: [HLS 214-273] In function 'void nnet::dense<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config11::weight_t*, config11::bias_t*)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region is not suggested (firmware/nnet_utils/nnet_dense.h:38:0)
+INFO: [HLS 214-131] Inlining function 'nnet::product::mult<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<12, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >::product(ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<12, 4, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>(ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>*, config3::weight_t*, config3::bias_t*)' (firmware/nnet_utils/nnet_conv2d_resource.h:74:25)
+INFO: [HLS 214-131] Inlining function 'nnet::product::mult<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<8, 2, (ap_q_mode)5, (ap_o_mode)3, 0> >::product(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<8, 2, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config7::weight_t*, config7::bias_t*)' (firmware/nnet_utils/nnet_dense_latency.h:42:27)
+INFO: [HLS 214-131] Inlining function 'nnet::product::mult<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> >::product(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config9::scale_t*, config9::bias_t*)' (firmware/nnet_utils/nnet_batchnorm.h:54:25)
+INFO: [HLS 214-131] Inlining function 'nnet::product::mult<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<12, 4, (ap_q_mode)5, (ap_o_mode)3, 0> >::product(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<12, 4, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config11::weight_t*, config11::bias_t*)' (firmware/nnet_utils/nnet_dense_latency.h:42:27)
+INFO: [HLS 214-131] Inlining function 'void nnet::dense<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config7::weight_t*, config7::bias_t*)' into 'cicada(ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>*)' (firmware/cicada.cpp:55:2)
+INFO: [HLS 214-131] Inlining function 'void nnet::dense<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config11::weight_t*, config11::bias_t*)' into 'cicada(ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>*)' (firmware/cicada.cpp:71:2)
+INFO: [HLS 214-186] Unrolling loop 'PixelInitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:47:9) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'InitAccumLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:51:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'MultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:66:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 16 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelMultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:70:17) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'PixelResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:94:9) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 21 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-186] Unrolling loop 'ResultLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:98:13) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 4 (firmware/nnet_utils/nnet_conv2d_resource.h:14:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_uint<1> >::value), ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>(config7::accum_t)' into 'void nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config7::weight_t*, config7::bias_t*)' (firmware/nnet_utils/nnet_dense_latency.h:15:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_uint<1> >::value), ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(config11::accum_t)' into 'void nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>*, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>*, config11::weight_t*, config11::bias_t*)' (firmware/nnet_utils/nnet_dense_latency.h:15:0)
+INFO: [HLS 214-241] Aggregating bram variable 'layer13_out' with field bit alignment mode in 16-bits (firmware/cicada.cpp:9:0)
+INFO: [HLS 214-241] Aggregating bram variable 'input_main' with field bit alignment mode in 10-bits (firmware/cicada.cpp:9:0)
+INFO: [HLS 214-248] Applying array_reshape to 'input_main': Complete reshaping on dimension 1. (firmware/cicada.cpp:9:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 214-270] Inferring complete partitioning for array 'w11' on dimension 1 (firmware/weights/w11.h:12:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i16.s_struct.ap_fixed.6s' into 'void nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config13>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>*) (.1)' (firmware/nnet_utils/nnet_activation.h:46:21)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 39.82 seconds. CPU system time: 3.69 seconds. Elapsed time: 43.96 seconds; current allocated memory: 274.491 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 274.494 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1.13 seconds. CPU system time: 0.44 seconds. Elapsed time: 1.64 seconds; current allocated memory: 307.459 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1.07 seconds. CPU system time: 0.29 seconds. Elapsed time: 1.42 seconds; current allocated memory: 357.751 MB.
+INFO: [XFORM 203-510] Pipelining loop 'PartitionLoop' (firmware/nnet_utils/nnet_conv2d_resource.h:41) in function 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' automatically.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' (firmware/nnet_utils/nnet_dense_latency.h:17:45).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config10>' (firmware/nnet_utils/nnet_activation.h:39:62).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' (firmware/nnet_utils/nnet_batchnorm.h:46:51).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::linear<ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config8>' (firmware/nnet_utils/nnet_activation.h:28:59).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' (firmware/nnet_utils/nnet_dense_latency.h:17:50).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config5>' (firmware/nnet_utils/nnet_activation.h:39:62).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::linear<ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config4>' (firmware/nnet_utils/nnet_activation.h:28:59).
+INFO: [HLS 200-489] Unrolling loop 'Product1' (firmware/nnet_utils/nnet_dense_latency.h:37) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Accum1' (firmware/nnet_utils/nnet_dense_latency.h:54) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_43_1' (firmware/nnet_utils/nnet_activation.h:43) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config10>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Result' (firmware/nnet_utils/nnet_batchnorm.h:52) in function 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_31_1' (firmware/nnet_utils/nnet_activation.h:31) in function 'nnet::linear<ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config8>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Product1' (firmware/nnet_utils/nnet_dense_latency.h:37) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 252.
+INFO: [HLS 200-489] Unrolling loop 'Product2' (firmware/nnet_utils/nnet_dense_latency.h:40) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'ResetAccum' (firmware/nnet_utils/nnet_dense_latency.h:48) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Accum1' (firmware/nnet_utils/nnet_dense_latency.h:54) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 252.
+INFO: [HLS 200-489] Unrolling loop 'Accum2' (firmware/nnet_utils/nnet_dense_latency.h:56) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Result' (firmware/nnet_utils/nnet_dense_latency.h:64) in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_43_1' (firmware/nnet_utils/nnet_activation.h:43) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config5>' completely with a factor of 252.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_31_1' (firmware/nnet_utils/nnet_activation.h:31) in function 'nnet::linear<ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config4>' completely with a factor of 252.
+INFO: [XFORM 203-101] Partitioning array 'layer3_out.V' (firmware/cicada.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer4_out.V' (firmware/cicada.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer5_out.V' (firmware/cicada.cpp:48) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer7_out.V' (firmware/cicada.cpp:53) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'b7.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer8_out.V' (firmware/cicada.cpp:57) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer9_out.V' (firmware/cicada.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 's9.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'b9.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer10_out.V' (firmware/cicada.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer11_out.V' (firmware/cicada.cpp:69) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'layer12_out.V' (firmware/cicada.cpp:73) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'mult.V' (firmware/nnet_utils/nnet_dense_latency.h:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'w11.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'mult.V' (firmware/nnet_utils/nnet_dense_latency.h:17) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'acc.V' (firmware/nnet_utils/nnet_dense_latency.h:18) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'data_buf.V' (firmware/nnet_utils/nnet_conv2d_resource.h:32) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'data_buf.V' (firmware/nnet_utils/nnet_conv2d_resource.h:32) in dimension 2 completely.
+WARNING: [HLS 200-914] Completely partitioning array 'layer3_out.V' (firmware/cicada.cpp:40) accessed through non-constant indices on dimension 1 (firmware/nnet_utils/nnet_conv2d_resource.h:100:7), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+Resolution: For help on HLS 200-914 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-914.html
+INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3_mult>' into 'nnet::conv_2d_resource_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' (firmware/nnet_utils/nnet_conv2d_resource.h:100) automatically.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'cicada' (firmware/cicada.cpp:44)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+Resolution: For help on HLS 200-786 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-786.html
+INFO: [XFORM 203-712] Applying dataflow to function 'cicada' (firmware/cicada.cpp:44), detected/extracted 10 process function(s): 
+	 'nnet::conv_2d_cl<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>'
+	 'nnet::linear<ap_fixed<30, 22, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config4>'
+	 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config5>'
+	 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>'
+	 'nnet::linear<ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config8>'
+	 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>'
+	 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config10>'
+	 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>'
+	 'nnet::linear<ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, linear_config12>'
+	 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config13>'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (firmware/nnet_utils/nnet_activation.h:39:74) to (firmware/nnet_utils/nnet_activation.h:50:1) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<16, 8, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config13>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (firmware/nnet_utils/nnet_activation.h:39:74) to (firmware/nnet_utils/nnet_activation.h:50:1) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config5>'... converting 505 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (firmware/nnet_utils/nnet_activation.h:39:74) to (firmware/nnet_utils/nnet_activation.h:50:1) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, relu_config10>'... converting 33 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (firmware/nnet_utils/nnet_code_gen.h:37:13) to (firmware/nnet_utils/nnet_code_gen.h:109:5) in function 'nnet::fill_buffer_3<ap_fixed<10, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>::fill_buffer'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config7>' (firmware/nnet_utils/nnet_dense_latency.h:31:25)...3732 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense_latency<ap_ufixed<10, 6, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<26, 14, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' (firmware/nnet_utils/nnet_dense_latency.h:31:1)...15 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 137.23 seconds. CPU system time: 23.66 seconds. Elapsed time: 161.13 seconds; current allocated memory: 503.079 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 25.39 seconds. CPU system time: 0.42 seconds. Elapsed time: 25.81 seconds; current allocated memory: 908.704 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cicada' ...
+WARNING: [SYN 201-103] Legalizing function name 'conv_2d_resource_cl<ap_fixed,ap_fixed<30,22,5,3,0>,config3>' to 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s'.
+WARNING: [SYN 201-103] Legalizing function name 'conv_2d_cl<ap_fixed<10, 6, 5, 3, 0>, ap_fixed<30, 22, 5, 3, 0>, config3>' to 'conv_2d_cl_ap_fixed_10_6_5_3_0_ap_fixed_30_22_5_3_0_config3_s'.
+WARNING: [SYN 201-103] Legalizing function name 'linear<ap_fixed<30, 22, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config4>' to 'linear_ap_fixed_30_22_5_3_0_ap_fixed_16_6_5_3_0_linear_config4_s'.
+WARNING: [SYN 201-103] Legalizing function name 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config5>' to 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config5_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config7>' to 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s'.
+WARNING: [SYN 201-103] Legalizing function name 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config8>' to 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config8_s'.
+WARNING: [SYN 201-103] Legalizing function name 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>' to 'normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s'.
+WARNING: [SYN 201-103] Legalizing function name 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config10>' to 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config10_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config11>' to 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config11_s'.
+WARNING: [SYN 201-103] Legalizing function name 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config12>' to 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config12_s'.
+WARNING: [SYN 201-103] Legalizing function name 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<16, 8, 4, 0, 0>, relu_config13>' to 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_16_8_4_0_0_relu_config13_s'.
+WARNING: [SYN 201-223] Checking resource limit in 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>': cannot find any operation of 'mul'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fill_buffer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'fill_buffer'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'fill_buffer'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.36 seconds. CPU system time: 0.58 seconds. Elapsed time: 1.95 seconds; current allocated memory: 935.335 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.66 seconds. CPU system time: 0.18 seconds. Elapsed time: 0.85 seconds; current allocated memory: 938.422 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'PartitionLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'PartitionLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 29.41 seconds. CPU system time: 0.55 seconds. Elapsed time: 29.99 seconds; current allocated memory: 958.101 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 12 seconds. CPU system time: 2.63 seconds. Elapsed time: 15.05 seconds; current allocated memory: 1.050 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2d_cl_ap_fixed_10_6_5_3_0_ap_fixed_30_22_5_3_0_config3_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 7.01 seconds. CPU system time: 4.91 seconds. Elapsed time: 12.16 seconds; current allocated memory: 1.050 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.4 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.44 seconds; current allocated memory: 1.050 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'linear_ap_fixed_30_22_5_3_0_ap_fixed_16_6_5_3_0_linear_config4_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'linear<ap_fixed<30, 22, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config4>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'linear<ap_fixed<30, 22, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config4>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4.61 seconds. CPU system time: 0.05 seconds. Elapsed time: 4.67 seconds; current allocated memory: 1.053 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.5 seconds; current allocated memory: 1.056 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config5_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config5>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config5>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4.12 seconds. CPU system time: 0.32 seconds. Elapsed time: 4.75 seconds; current allocated memory: 1.067 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 4.85 seconds. CPU system time: 0.61 seconds. Elapsed time: 5.6 seconds; current allocated memory: 1.080 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config7>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 4, function 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config7>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 33.3 seconds. CPU system time: 1.18 seconds. Elapsed time: 34.53 seconds; current allocated memory: 1.126 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 55.82 seconds. CPU system time: 2.95 seconds. Elapsed time: 60.5 seconds; current allocated memory: 1.191 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config8>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config8>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 39.64 seconds. CPU system time: 3.8 seconds. Elapsed time: 43.9 seconds; current allocated memory: 1.191 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.08 seconds; current allocated memory: 1.191 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 1, Depth = 1, function 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.21 seconds; current allocated memory: 1.191 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.14 seconds; current allocated memory: 1.192 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config10_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config10>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<10, 6, 4, 0, 0>, relu_config10>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.35 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.41 seconds; current allocated memory: 1.192 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.3 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.38 seconds; current allocated memory: 1.193 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config11_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config11>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 3, function 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config11>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.76 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.89 seconds; current allocated memory: 1.193 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.24 seconds; current allocated memory: 1.194 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config12_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config12>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'linear<ap_fixed<26, 14, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, linear_config12>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.29 seconds; current allocated memory: 1.194 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1.194 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_16_8_4_0_0_relu_config13_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<16, 8, 4, 0, 0>, relu_config13>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<16, 8, 4, 0, 0>, relu_config13>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.11 seconds; current allocated memory: 1.194 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.52 seconds; current allocated memory: 1.194 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cicada' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.34 seconds; current allocated memory: 1.196 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 14.16 seconds. CPU system time: 0.32 seconds. Elapsed time: 14.53 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fill_buffer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fill_buffer'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 41.76 seconds. CPU system time: 0.41 seconds. Elapsed time: 42.27 seconds; current allocated memory: 1.223 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s' pipeline 'PartitionLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s' is 7854 from HDL expression: ((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_20_1_1': 63 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_7ns_17_1_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_7s_17_1_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_8ns_18_1_1': 42 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_8s_18_1_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_9ns_19_1_1': 84 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_2568_1_1_1': 249 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_2568_30_1_1': 249 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 34.5 seconds. CPU system time: 1.61 seconds. Elapsed time: 36.2 seconds; current allocated memory: 1.902 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d_cl_ap_fixed_10_6_5_3_0_ap_fixed_30_22_5_3_0_config3_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv_2d_cl_ap_fixed_10_6_5_3_0_ap_fixed_30_22_5_3_0_config3_s' is 7563 from HDL expression: ((grp_conv_2d_resource_cl_ap_fixed_ap_fixed_30_22_5_3_0_config3_s_fu_12_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_cl_ap_fixed_10_6_5_3_0_ap_fixed_30_22_5_3_0_config3_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21.24 seconds. CPU system time: 9.51 seconds. Elapsed time: 31.54 seconds; current allocated memory: 2.108 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'linear_ap_fixed_30_22_5_3_0_ap_fixed_16_6_5_3_0_linear_config4_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'linear_ap_fixed_30_22_5_3_0_ap_fixed_16_6_5_3_0_linear_config4_s' is 8067 from HDL expression: (~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))
+INFO: [RTGEN 206-100] Finished creating RTL model for 'linear_ap_fixed_30_22_5_3_0_ap_fixed_16_6_5_3_0_linear_config4_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 9.73 seconds. CPU system time: 0.2 seconds. Elapsed time: 9.95 seconds; current allocated memory: 2.264 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config5_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config5_s' is 5295 from HDL expression: (~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))
+INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config5_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.7 seconds. CPU system time: 0.92 seconds. Elapsed time: 7.69 seconds; current allocated memory: 2.447 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s' pipeline 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config7>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s' is 18901 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_5ns_14_1_1': 69 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_5s_15_1_1': 65 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config7_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 32.15 seconds. CPU system time: 3.06 seconds. Elapsed time: 35.54 seconds; current allocated memory: 2.584 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config8_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 106.29 seconds. CPU system time: 11.04 seconds. Elapsed time: 118.29 seconds; current allocated memory: 2.815 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.41 seconds. CPU system time: 0.3 seconds. Elapsed time: 0.72 seconds; current allocated memory: 2.817 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config10_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_10_6_4_0_0_relu_config10_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.69 seconds. CPU system time: 0.32 seconds. Elapsed time: 1.03 seconds; current allocated memory: 2.820 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config11_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config11_s' pipeline 'dense_latency<ap_ufixed<10, 6, 4, 0, 0>, ap_fixed<26, 14, 5, 3, 0>, config11>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_10s_18_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_7s_17_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_8ns_17_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_9ns_18_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10ns_9s_18_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_latency_ap_ufixed_10_6_4_0_0_ap_fixed_26_14_5_3_0_config11_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.79 seconds. CPU system time: 0.46 seconds. Elapsed time: 2.28 seconds; current allocated memory: 2.825 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config12_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'linear_ap_fixed_26_14_5_3_0_ap_fixed_16_6_5_3_0_linear_config12_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.77 seconds. CPU system time: 0.36 seconds. Elapsed time: 1.2 seconds; current allocated memory: 2.826 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_16_8_4_0_0_relu_config13_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_ap_fixed_16_6_5_3_0_ap_ufixed_16_8_4_0_0_relu_config13_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.58 seconds; current allocated memory: 2.826 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cicada' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cicada/input_main' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cicada/layer13_out' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cicada' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cicada'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.54 seconds. CPU system time: 0.35 seconds. Elapsed time: 1.96 seconds; current allocated memory: 2.882 GB.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_0_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_1_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_2_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_3_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_4_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_5_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_6_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_7_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_8_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_9_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_10_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_11_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_12_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_13_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_14_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_15_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_16_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_17_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_18_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_19_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_20_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_21_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_22_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_23_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_24_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_25_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_26_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_27_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_28_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_29_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_30_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_31_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_32_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_33_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_34_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_35_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_36_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_37_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_38_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_39_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_40_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_41_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_42_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_43_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_44_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_45_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_46_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_47_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_48_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_49_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_50_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_51_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_52_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_53_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_54_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_55_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_56_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_57_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_58_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_59_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_60_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_61_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_62_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_63_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_64_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_65_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_66_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_67_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_68_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_69_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_70_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_71_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_72_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_73_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_74_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_75_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_76_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_77_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_78_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_79_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_80_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_81_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_82_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_83_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_84_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_85_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_86_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_87_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_88_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_89_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_90_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_91_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_92_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_93_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_94_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_95_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_96_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_97_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_98_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_99_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_100_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_101_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_102_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_103_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_104_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_105_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_106_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_107_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_108_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_109_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_110_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_111_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_112_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_113_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_114_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_115_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_116_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_117_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_118_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_119_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_120_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_121_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_122_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_123_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_124_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_125_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_126_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_127_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_128_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_129_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_130_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_131_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_132_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_133_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_134_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_135_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_136_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_137_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_138_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_139_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_140_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_141_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_142_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_143_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_144_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_145_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_146_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_147_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_148_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_149_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_150_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_151_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_152_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_153_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_154_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_155_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_156_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_157_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_158_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_159_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_160_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_161_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_162_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_163_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_164_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_165_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_166_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_167_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_168_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_169_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_170_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_171_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_172_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_173_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_174_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_175_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_176_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_177_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_178_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_179_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_180_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_181_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_182_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_183_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_184_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_185_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_186_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_187_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_188_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_189_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_190_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_191_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_192_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_193_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_194_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_195_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_196_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_197_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_198_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_199_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_200_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_201_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_202_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_203_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_204_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_205_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_206_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_207_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_208_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_209_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_210_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_211_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_212_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_213_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_214_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_215_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_216_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_217_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_218_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_219_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_220_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_221_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_222_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_223_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_224_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_225_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_226_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_227_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_228_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_229_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_230_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_231_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_232_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_233_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_234_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_235_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_236_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_237_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_238_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_239_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_240_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_241_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_242_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_243_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_244_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_245_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_246_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_247_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_248_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_249_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_250_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer3_out_V_251_channel_U(cicada_fifo_w30_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_0_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_1_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_2_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_3_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_4_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_5_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_6_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_7_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_8_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_9_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_10_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_11_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_12_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_13_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_14_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_15_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_16_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_17_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_18_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_19_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_20_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_21_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_22_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_23_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_24_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_25_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_26_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_27_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_28_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_29_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_30_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_31_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_32_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_33_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_34_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_35_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_36_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_37_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_38_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_39_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_40_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_41_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_42_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_43_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_44_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_45_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_46_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_47_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_48_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_49_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_50_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_51_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_52_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_53_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_54_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_55_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_56_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_57_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_58_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_59_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_60_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_61_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_62_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_63_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_64_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_65_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_66_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_67_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_68_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_69_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_70_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_71_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_72_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_73_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_74_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_75_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_76_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_77_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_78_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_79_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_80_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_81_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_82_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_83_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_84_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_85_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_86_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_87_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_88_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_89_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_90_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_91_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_92_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_93_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_94_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_95_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_96_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_97_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_98_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_99_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_100_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_101_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_102_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_103_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_104_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_105_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_106_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_107_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_108_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_109_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_110_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_111_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_112_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_113_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_114_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_115_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_116_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_117_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_118_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_119_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_120_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_121_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_122_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_123_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_124_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_125_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_126_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_127_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_128_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_129_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_130_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_131_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_132_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_133_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_134_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_135_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_136_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_137_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_138_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_139_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_140_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_141_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_142_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_143_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_144_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_145_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_146_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_147_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_148_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_149_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_150_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_151_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_152_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_153_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_154_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_155_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_156_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_157_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_158_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_159_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_160_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_161_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_162_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_163_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_164_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_165_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_166_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_167_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_168_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_169_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_170_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_171_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_172_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_173_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_174_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_175_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_176_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_177_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_178_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_179_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_180_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_181_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_182_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_183_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_184_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_185_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_186_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_187_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_188_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_189_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_190_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_191_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_192_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_193_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_194_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_195_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_196_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_197_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_198_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_199_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_200_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_201_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_202_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_203_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_204_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_205_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_206_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_207_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_208_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_209_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_210_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_211_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_212_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_213_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_214_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_215_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_216_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_217_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_218_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_219_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_220_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_221_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_222_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_223_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_224_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_225_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_226_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_227_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_228_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_229_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_230_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_231_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_232_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_233_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_234_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_235_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_236_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_237_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_238_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_239_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_240_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_241_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_242_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_243_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_244_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_245_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_246_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_247_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_248_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_249_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_250_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer4_out_V_251_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_0_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_1_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_2_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_3_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_4_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_5_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_6_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_7_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_8_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_9_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_10_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_11_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_12_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_13_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_14_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_15_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_16_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_17_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_18_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_19_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_20_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_21_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_22_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_23_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_24_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_25_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_26_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_27_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_28_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_29_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_30_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_31_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_32_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_33_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_34_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_35_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_36_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_37_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_38_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_39_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_40_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_41_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_42_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_43_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_44_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_45_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_46_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_47_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_48_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_49_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_50_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_51_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_52_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_53_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_54_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_55_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_56_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_57_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_58_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_59_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_60_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_61_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_62_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_63_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_64_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_65_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_66_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_67_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_68_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_69_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_70_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_71_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_72_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_73_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_74_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_75_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_76_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_77_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_78_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_79_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_80_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_81_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_82_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_83_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_84_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_85_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_86_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_87_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_88_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_89_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_90_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_91_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_92_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_93_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_94_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_95_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_96_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_97_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_98_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_99_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_100_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_101_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_102_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_103_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_104_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_105_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_106_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_107_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_108_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_109_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_110_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_111_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_112_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_113_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_114_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_115_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_116_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_117_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_118_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_119_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_120_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_121_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_122_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_123_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_124_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_125_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_126_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_127_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_128_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_129_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_130_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_131_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_132_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_133_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_134_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_135_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_136_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_137_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_138_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_139_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_140_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_141_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_142_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_143_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_144_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_145_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_146_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_147_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_148_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_149_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_150_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_151_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_152_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_153_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_154_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_155_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_156_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_157_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_158_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_159_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_160_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_161_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_162_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_163_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_164_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_165_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_166_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_167_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_168_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_169_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_170_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_171_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_172_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_173_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_174_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_175_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_176_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_177_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_178_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_179_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_180_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_181_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_182_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_183_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_184_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_185_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_186_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_187_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_188_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_189_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_190_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_191_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_192_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_193_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_194_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_195_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_196_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_197_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_198_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_199_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_200_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_201_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_202_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_203_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_204_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_205_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_206_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_207_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_208_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_209_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_210_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_211_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_212_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_213_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_214_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_215_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_216_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_217_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_218_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_219_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_220_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_221_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_222_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_223_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_224_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_225_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_226_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_227_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_228_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_229_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_230_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_231_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_232_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_233_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_234_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_235_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_236_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_237_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_238_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_239_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_240_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_241_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_242_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_243_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_244_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_245_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_246_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_247_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_248_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_249_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_250_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer5_out_V_251_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_0_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_1_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_2_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_3_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_4_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_5_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_6_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_7_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_8_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_9_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_10_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_11_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_12_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_13_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_14_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer7_out_V_15_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_0_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_1_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_2_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_3_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_4_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_5_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_6_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_7_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_8_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_9_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_10_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_11_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_12_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_13_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_14_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer8_out_V_15_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_0_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_1_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_2_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_3_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_4_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_5_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_6_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_7_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_8_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_9_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_10_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_11_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_12_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_13_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_14_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer9_out_V_15_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_0_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_1_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_2_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_3_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_4_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_5_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_6_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_7_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_8_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_9_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_10_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_11_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_12_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_13_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_14_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer10_out_V_15_U(cicada_fifo_w10_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer11_out_V_0_U(cicada_fifo_w18_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'layer12_out_V_0_U(cicada_fifo_w16_d2_S)' using Shift Registers.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 172.56 seconds. CPU system time: 21.09 seconds. Elapsed time: 256.74 seconds; current allocated memory: 2.915 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3.57 seconds. CPU system time: 0.16 seconds. Elapsed time: 3.85 seconds; current allocated memory: 2.972 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for cicada.
+INFO: [VLOG 209-307] Generating Verilog RTL for cicada.
+INFO: [HLS 200-789] **** Estimated Fmax: 183.07 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 874.87 seconds. CPU system time: 100.16 seconds. Elapsed time: 1047 seconds; current allocated memory: 2.972 GB.
+***** C/RTL SYNTHESIS COMPLETED IN 0h17m27s *****
+INFO: [HLS 200-112] Total CPU user time: 891.74 seconds. Total CPU system time: 104.31 seconds. Total elapsed time: 1065.86 seconds; peak allocated memory: 2.972 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Thu Nov  6 08:50:00 2025...

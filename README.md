@@ -1,0 +1,1 @@
+The python scripts produce the mock CICADA models for the standard one-channel (energy channel) case and the three-channel case. In addition, the scripts produce the HLS setups for both cases and run csim and csynth steps. the HLS setups are also committed here.
