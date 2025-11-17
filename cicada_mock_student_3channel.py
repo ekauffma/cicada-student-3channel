@@ -25,7 +25,7 @@ from qkeras import (
     QActivation,
     QDense,
     QBatchNormalization,
-    # QDenseBatchnorm,
+    QDenseBatchnorm,
     quantized_bits,
 )
 from tensorflow.keras.layers import Input, Flatten, Dropout, Reshape, Concatenate
@@ -96,26 +96,26 @@ class Cicada3Channel:
             padding="valid",
             use_bias=False,
             kernel_quantizer=quantized_bits(12, 3, 1, alpha=1.0),
-            name="conv_replacement",
+            name="conv",
         )(x)
 
         x = QActivation("quantized_relu(10, 6)", name="relu0")(x)
         x = Flatten(name="flatten")(x)
 
         x = Dropout(1 / 9)(x)
-        x = QDense(
-            16,
-            kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
-            bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
-            name="dense1",
-        )(x)
-        x = QBatchNormalization(name="bn1")(x)
-        # x = QDenseBatchnorm(
+        # x = QDense(
         #     16,
         #     kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
         #     bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
         #     name="dense1",
         # )(x)
+        # x = QBatchNormalization(name="bn1")(x)
+        x = QDenseBatchnorm(
+            16,
+            kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
+            bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
+            name="dense1",
+        )(x)
         x = QActivation("quantized_relu(10, 6)", name="relu1")(x)
         x = Dropout(1 / 8)(x)
 
@@ -178,7 +178,7 @@ def convert_to_hls4ml_model(keras_model, hls_config):
         backend="Vitis",
         hls_config=hls_config,
         io_type="io_parallel",
-        output_dir="cicada-3channel",
+        output_dir="cicada-3channel-qdbn",
         part="xc7vx690tffg1927-2",
         project_name="cicada",
         version=3,
@@ -188,4 +188,4 @@ def convert_to_hls4ml_model(keras_model, hls_config):
 
 hls_model = convert_to_hls4ml_model(cicada_3channel, hls_config)
 
-hls_model.build(csim=True, synth=True, vsynth=False)
+# hls_model.build(csim=True, synth=True, vsynth=False)

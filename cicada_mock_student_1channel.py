@@ -25,7 +25,7 @@ from qkeras import (
     QActivation,
     QDense,
     QBatchNormalization,
-    # QDenseBatchnorm,
+    QDenseBatchnorm,
     quantized_bits,
 )
 from tensorflow.keras.layers import Input, Flatten, Dropout, Reshape, Concatenate
@@ -41,7 +41,7 @@ num_samples = 5000
 
 def generate_random_dataset(n_samples: int) -> np.ndarray:
     # Channel 0: values 0-255
-    channel0 = np.random.randint(0, 256, size=(n_samples, 252, 1), dtype=np.uint
+    channel0 = np.random.randint(0, 256, size=(n_samples, 252, 1), dtype=np.uint)
     return (channel0.astype("float32"))
 
 # Example usage:
@@ -72,19 +72,19 @@ class CicadaV2:
         x = Flatten(name="flatten")(x)
 
         x = Dropout(1 / 9)(x)
-        x = QDense(
-            16,
-            kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
-            bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
-            name="dense1",
-        )(x)
-        x = QBatchNormalization(name="bn1")(x)
-        # x = QDenseBatchnorm(
+        # x = QDense(
         #     16,
         #     kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
         #     bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
         #     name="dense1",
         # )(x)
+        # x = QBatchNormalization(name="bn1")(x)
+        x = QDenseBatchnorm(
+            16,
+            kernel_quantizer=quantized_bits(8, 1, 1, alpha=1.0),
+            bias_quantizer=quantized_bits(8, 3, 1, alpha=1.0),
+            name="dense1",
+        )(x)
         x = QActivation("quantized_relu(10, 6)", name="relu1")(x)
         x = Dropout(1 / 8)(x)
 

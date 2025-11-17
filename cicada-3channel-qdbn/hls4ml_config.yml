@@ -1,0 +1,109 @@
+Backend: Vitis
+ClockPeriod: 6.25
+HLSConfig:
+  LayerName:
+    concat_inputs:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+    conv:
+      ParallelizationFactor: 21
+      Precision:
+        accum: fixed<30,22>
+        bias: fixed<16,6>
+        result: fixed<30,22>
+        weight: fixed<12,4>
+      ReuseFactor: 1
+      Strategy: Resource
+      StreamOutputs: false
+      Trace: false
+      implementation: array
+    conv_linear:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      StreamOutputs: false
+      Trace: false
+      implementation: array
+    dense1:
+      Precision:
+        accum: fixed<26,14>
+        bias: fixed<8,4>
+        result: fixed<26,14>
+        weight: fixed<8,2>
+      ReuseFactor: 2
+      Trace: false
+    dense1_linear:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+    dense2:
+      Precision:
+        accum: fixed<26,14>
+        bias: fixed<16,6>
+        result: fixed<26,14>
+        weight: fixed<12,4>
+      ReuseFactor: 2
+      Trace: false
+    dense2_linear:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+    flatten:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+    input_bin:
+      Precision:
+        result: fixed<1,1>
+      ReuseFactor: 2
+      Trace: false
+    input_main:
+      Precision:
+        result: fixed<10,6>
+      ReuseFactor: 2
+      Trace: false
+    outputs:
+      Precision:
+        result: ufixed<16,8,RND_CONV,SAT>
+      ReuseFactor: 2
+      Trace: false
+    relu0:
+      Precision:
+        result: ufixed<10,6,RND_CONV,SAT>
+      ReuseFactor: 2
+      Trace: false
+    relu1:
+      Precision:
+        result: ufixed<10,6,RND_CONV,SAT>
+      ReuseFactor: 2
+      Trace: false
+    reshape1:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+    reshape2:
+      Precision:
+        result: fixed<16,6>
+      ReuseFactor: 2
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision: fixed<16,6>
+    ReuseFactor: 1
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'cicada-3channel-qdbn/keras_model.h5'
+OutputDir: cicada-3channel-qdbn
+OutputPredictions: null
+Part: xc7vx690tffg1927-2
+ProjectName: cicada
+Stamp: A8FD6FC2
+Version: 3
