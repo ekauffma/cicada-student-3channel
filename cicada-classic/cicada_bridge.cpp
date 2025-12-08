@@ -49,12 +49,12 @@ void collect_trace_output(struct trace_data *c_trace_outputs) {
 
 // Wrapper of top level function for Python bridge
 void cicada_float(
-    float student_input[N_INPUT_1_1*N_INPUT_2_1],
+    float student_input[N_INPUT_1_1],
     float layer12_out[N_LAYER_10]
 ) {
 
-    input_t student_input_ap[N_INPUT_1_1*N_INPUT_2_1];
-    nnet::convert_data<float, input_t, N_INPUT_1_1*N_INPUT_2_1>(student_input, student_input_ap);
+    input_t student_input_ap[N_INPUT_1_1];
+    nnet::convert_data<float, input_t, N_INPUT_1_1>(student_input, student_input_ap);
 
     result_t layer12_out_ap[N_LAYER_10];
 
@@ -64,11 +64,11 @@ void cicada_float(
 }
 
 void cicada_double(
-    double student_input[N_INPUT_1_1*N_INPUT_2_1],
+    double student_input[N_INPUT_1_1],
     double layer12_out[N_LAYER_10]
 ) {
-    input_t student_input_ap[N_INPUT_1_1*N_INPUT_2_1];
-    nnet::convert_data<double, input_t, N_INPUT_1_1*N_INPUT_2_1>(student_input, student_input_ap);
+    input_t student_input_ap[N_INPUT_1_1];
+    nnet::convert_data<double, input_t, N_INPUT_1_1>(student_input, student_input_ap);
 
     result_t layer12_out_ap[N_LAYER_10];
 
