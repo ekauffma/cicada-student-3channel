@@ -8,8 +8,7 @@
 #include <cstdio>
 
 // hls-fpga-machine-learning insert numbers
-#define N_INPUT_1_1 18
-#define N_INPUT_2_1 14
+#define N_INPUT_1_1 252
 #define N_SIZE_0_2 18
 #define N_SIZE_1_2 14
 #define N_SIZE_2_2 1
